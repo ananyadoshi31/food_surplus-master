@@ -14,9 +14,7 @@ const FilterScreen = ({ navigation,route }) => {
   const [sliderValue, setSliderValue] = useState("10");
     const onPressApply=()=>{
       navigation.navigate('Customer_search')
-      
     }
-
     const [filter, setFilter] = useState([]);
     const [category,setCategory]=useState('')
     const [price,setPrice]=useState('')
@@ -31,7 +29,6 @@ const FilterScreen = ({ navigation,route }) => {
     };
     const filterData = async (name) => {
       const token = await getToken();
-
       try {
         const price=""
         const location=""
@@ -53,7 +50,6 @@ const FilterScreen = ({ navigation,route }) => {
       }
     };
 // ****************************************************************
-
 useEffect(() => {
   // filterData("");
 }, []);
@@ -80,7 +76,7 @@ useEffect(() => {
         <View style={{height:150}}>
             <View style={styles.box}>
             <TouchableOpacity
-            onPress={()=>setCategory("bread")}
+            onPress={()=>setCategory("drinks")}
             >
                 <Image 
                 style={styles.img}
@@ -214,8 +210,6 @@ useEffect(() => {
         </View>
       </View>
     </View>
-
-
 
     <View >
         <Text></Text>

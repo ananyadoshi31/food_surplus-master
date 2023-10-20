@@ -13,9 +13,9 @@ const CartScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      {/* <ScrollView> */}
+
         <CartItem navigation={navigation}/>
-      {/* </ScrollView> */}
+
         
         <RecommendedItems/>
         <CartFooter navigation={navigation}/>

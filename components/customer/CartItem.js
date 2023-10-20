@@ -4,6 +4,7 @@ import { Divider } from 'react-native-elements'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import axios from 'axios'
+import { ScrollView } from 'react-native-gesture-handler';
 const CartItem = ({navigation}) => {
     const [cart,setCart]=useState([])
     const [cartImg,setCartImg]=useState([])
@@ -71,8 +72,8 @@ const deleteCart = async (id) => {
     <>
   
     <View >
-            <View style={{height:30,marginBottom:10}}>
-            <Image style={{width:20,height:50,padding:20,marginTop:-10}} source={{uri: 'https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png'}}/>
+            <View style={{marginBottom:10}}>
+            <Image style={{width:20,height:50,padding:20,marginTop:-30}} source={{uri: 'https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png'}}/>
                 <Text style={{
                         textAlign:'center',
                         fontSize:20,
@@ -82,18 +83,16 @@ const deleteCart = async (id) => {
                 }}>Cart</Text>
             </View>
             <Divider width={1} orientation='vertical'/>
-    {cart.map((product) => (
+            <ScrollView style={{height:440}}>
+            {cart.map((product) => (
+                 
+
             <View key={product.id} style={styles.container}>     
             
-                    <View style={styles.food_image}>
-                        
-                        {/* <Image source={{uri:`https://wixstocle.pythonanywhere.com${products['food_image'].image}`}}/> */}
-                    </View>
-                    
-                    
+                   
                     <View style={styles.item_box}>          
                             <View style={{alignSelf:'flex-end', flexDirection:'row'}}>
-                                <Text style={{fontWeight:'700',fontSize:25, marginRight:12}}>{product['food'].name}</Text>
+                                <Text style={{fontWeight:'700',fontSize:20, marginRight:12}}>{product['food'].name}</Text>
                                     <TouchableOpacity 
                                     onPress={()=>deleteCart(product.id)}
                                     style={{flexDirection:'row', justifyContent:'space-around'}}>
@@ -118,14 +117,19 @@ const deleteCart = async (id) => {
                             
 
                                 <Text style={{color:'#CB1206', fontWeight:'500', textAlign:'center'}}>Expiry: {product['food'].age} hrs</Text>
-                                <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                                <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                                     <Text style={styles.text}>{product['food'].quantity} kg</Text>
-                                    <Text style={styles.text}></Text>
+                                    
+                                    <Text style={styles.text}>Rs. {product['food'].price}</Text>
+                                    
                                 </View>   
                             </View>
                     </View> 
             </View>
+           
+   
     ))}
+    </ScrollView>        
 
 </View>
     </>
@@ -145,13 +149,15 @@ const styles=StyleSheet.create({
         width:20
     },
     container:{
-        flex:1,
-        padding:20
+        // flex:1,
+        padding:8,
+        marginTop:0,
+        width:'90%'
     },
 
     item_box:{
-        height:150,
-        width:190,
+        height:100,
+        width:'90%',
         backgroundColor:'#F0F0F0',
         alignSelf:'flex-end',
         borderRadius:20
@@ -159,7 +165,9 @@ const styles=StyleSheet.create({
     text:{
         paddingHorizontal:3,
         fontSize:15,
-        fontWeight:'500'
+        fontWeight:'500',
+        textAlign:'center',
+        alignSelf:'center'
     },
     location_footer:{
         color:'black',
@@ -179,11 +187,7 @@ const styles=StyleSheet.create({
         borderRadius:50
 
     },
-    food_image:{
-        height:145,
-        width:140,
-        // alignSelf:'flex-start'
-    }
+
 
 })
 

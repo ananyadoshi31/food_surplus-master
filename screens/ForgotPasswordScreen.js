@@ -1,8 +1,11 @@
 import { View, Text,StyleSheet,Image } from 'react-native'
 import React from 'react'
 import LoginForm from '../components/loginScreen/LoginForm'
-import ForgotPasswordForm from '../components/forgotPasswordScreen/ForgotPasswordForm'
-// const INSTAGRAM_LOGO='https://logowik.com/content/uploads/images/606_instagram.jpg'
+import ForgotPasswordForm from '../components/forgotPassword/ForgotPasswordForm'
+
+
+
+
 const ForgotPasswordScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -19,7 +22,7 @@ const ForgotPasswordScreen = ({navigation}) => {
         <View style={{
             backgroundColor:'#000',
             height:320,
-            top:260,
+            top:290,
             borderTopRightRadius:80
         }}></View>
     </View>

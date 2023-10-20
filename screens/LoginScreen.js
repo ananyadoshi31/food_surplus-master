@@ -1,7 +1,9 @@
 import { View, Text,StyleSheet,Image } from 'react-native'
 import React from 'react'
 import LoginForm from '../components/loginScreen/LoginForm'
-// const INSTAGRAM_LOGO='https://logowik.com/content/uploads/images/606_instagram.jpg'
+
+
+
 const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -18,7 +20,7 @@ const LoginScreen = ({navigation}) => {
         <View style={{
             backgroundColor:'#000',
             height:120,
-            top:110,
+            top:20,
             borderTopRightRadius:80
         }}></View>
     </View>

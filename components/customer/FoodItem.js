@@ -181,29 +181,31 @@ const FoodItem = ({ navigation, route }) =>
   {
     return (
       <>
-        <View style={styles.container}>
-          <View style={{ marginTop: 50 }}>
+       
+        <View style={{ width: "100%",padding:20}}>
             <TextInput
               onChangeText={(text) => {
                 fetchData(text);
               }}
-              placeholder="Search"
-              style={{ height: "100%", width: "100%" }}
+              placeholder="Search food"
+              style={{ height: 40, backgroundColor:'#d9d9d9', padding:10}}
             />
           </View>
+          <View style={{marginTop:580}}>
           {searchTerm?.map((product) => (
             <View style={styles.container}>
-              <View style={{ flexDirection: "row", width: "90%" }}>
+              <View style={{ flexDirection: "row", width: "90%"}}>
                 <View
-                  style={{ padding: 7, backgroundColor: "#000000", height: 120 }}
+                  style={{ backgroundColor: "#000000", height: 120 }}
                 ></View>
                 <View
                   style={{
+                    padding:10,
                     backgroundColor: "#000000",
-                    borderBottomRightRadius: 30,
-                    borderTopRightRadius: 30,
-                    width: "60%",
+                    borderRadius:30,
+                    width: "100%",
                     height: 120,
+                    marginTop:-600
                   }}
                 >
                   <View style={{ flexDirection: "row" }}>
@@ -236,7 +238,7 @@ const FoodItem = ({ navigation, route }) =>
                       source={require("../../assets/location_white.png")}
                     />
                     <Text> </Text>
-                    <View style={{}}>
+                    <View >
                       <Text style={styles.location_footer}>
                         {product["restaurant"].area}
                       </Text>
@@ -255,146 +257,140 @@ else {
 
     return (
       <>
-        <View style={styles.container}>
-          <View style={{ marginTop: 50 }}>
-            <TextInput
-              onChangeText={(text) => {
-                fetchData(text);
-              }}
-              placeholder="Search"
-              style={{ height: "100%", width: "100%" }}
-            />
-          </View>
-
-          {/* ************************************************ */}
-
-          {recommend?.map((product) => (
-            <View style={styles.container}>
-              <View style={{ flexDirection: "row", width: "90%" }}>
-                <View>
-                  {/* <Image
-                 style={styles.food_img}
-                 source={{
-                   uri: `https://wixstocle.pythonanywhere.com${product["food_image"].image}`,
-                 }}
-               /> */}
-                </View>
-
-                <View
-                  style={{ padding: 7, backgroundColor: "#000000", height: 120 }}
-                ></View>
-                <View
-                  style={{
-                    backgroundColor: "#000000",
-                    borderBottomRightRadius: 30,
-                    borderTopRightRadius: 30,
-                    width: "60%",
-                    height: 120,
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.location_header}>{product.name}</Text>
-                    {/* <Text>{route.params.paramKey1}</Text> */}
-                    <TouchableOpacity
-                      onPress={() => addToCart(product.id)}
-                      style={{ marginLeft: 10, marginTop: 10 }}
-                    >
-                      <View style={styles.middleicon}>
-                        <Text
-                          style={{
-                            fontWeight: "500",
-                            color: "black",
-                            textAlign: "center",
-                            fontSize: 22,
-                            marginTop: -5,
-
-                          }}
-                        >
-                          +
-                        </Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={{ flexDirection: "row" }}>
-                    <Image
-                      style={styles.location_inner}
-                      source={require("../../assets/location_white.png")}
-                    />
-                    <Text> </Text>
-                    <View style={{}}>
-                      <Text style={styles.location_footer}>
-                        {product["restaurant"].area}
-                      </Text>
-                    </View>
-                  </View>
-                  <Text style={styles.amount}>Rs. {product.price}</Text>
-                </View>
-              </View>
-            </View>
-          ))}
-
-          {/* ******************************************** */}
-
-          {searchTerm?.map((product) => (
-            <View style={styles.container}>
-              <View style={{ flexDirection: "row", width: "90%" }}>
-             
-
-                <View
-                  style={{ padding: 7, backgroundColor: "#000000", height: 120 }}
-                ></View>
-                <View
-                  style={{
-                    backgroundColor: "#000000",
-                    borderBottomRightRadius: 30,
-                    borderTopRightRadius: 30,
-                    width: "60%",
-                    height: 120,
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.location_header}>{product.name}</Text>
-                    <TouchableOpacity
-                      onPress={() => addToCart(product.id)}
-                      style={{ marginLeft: 10, marginTop: 10 }}
-                    >
-                      <View style={styles.middleicon}>
-                        <Text
-                          style={{
-                            fontWeight: "500",
-                            color: "black",
-                            textAlign: "center",
-                            fontSize: 22,
-                            marginTop: -5,
-
-                          }}
-                        >
-                          +
-                        </Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={{ flexDirection: "row" }}>
-                    <Image
-                      style={styles.location_inner}
-                      source={require("../../assets/location_white.png")}
-                    />
-                    <Text> </Text>
-                    <View style={{}}>
-                      <Text style={styles.location_footer}>
-                        {product["restaurant"].area}
-                      </Text>
-                    </View>
-                  </View>
-                  <Text style={styles.amount}>Rs. {product.price}</Text>
-                </View>
-              </View>
-            </View>
-          ))}
+       
+      <View style={{ width: "100%",padding:20}}>
+          <TextInput
+            onChangeText={(text) => {
+              fetchData(text);
+            }}
+            placeholder="Search food"
+            style={{ height: 40, backgroundColor:'#d9d9d9', padding:10}}
+          />
         </View>
-      </>
+        {/* **************************************** */}
+        <View style={{marginTop:580}}>
+        {recommend?.map((product) => (
+          <View style={styles.container}>
+            <View style={{ flexDirection: "row", width: "90%"}}>
+              <View
+                style={{ backgroundColor: "#000000", height: 120 }}
+              ></View>
+              <View
+                style={{
+                  padding:10,
+                  backgroundColor: "#000000",
+                  borderRadius:30,
+                  width: "100%",
+                  height: 120,
+                  marginTop:-600
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.location_header}>{product.name}</Text>
+                  {/* <Text>{route.params.paramKey1}</Text> */}
+                  <TouchableOpacity
+                    onPress={() => addToCart(product.id)}
+                    style={{ marginLeft: 10, marginTop: 10 }}
+                  >
+                    <View style={styles.middleicon}>
+                      <Text
+                        style={{
+                          fontWeight: "500",
+                          color: "black",
+                          textAlign: "center",
+                          fontSize: 22,
+                          marginTop: -5,
+
+                        }}
+                      >
+                        +
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={{ flexDirection: "row" }}>
+                  <Image
+                    style={styles.location_inner}
+                    source={require("../../assets/location_white.png")}
+                  />
+                  <Text> </Text>
+                  <View >
+                    <Text style={styles.location_footer}>
+                      {product["restaurant"].area}
+                    </Text>
+                  </View>
+                </View>
+                <Text style={styles.amount}>Rs. {product.price}</Text>
+              </View>
+            </View>
+          </View>
+        ))}
+{/* </View> */}
+
+
+
+        {/* ******************************************* */}
+        {/* <View style={{marginTop:580}}> */}
+        {searchTerm?.map((product) => (
+          <View style={styles.container}>
+            <View style={{ flexDirection: "row", width: "90%"}}>
+              <View
+                style={{ backgroundColor: "#000000", height: 120 }}
+              ></View>
+              <View
+                style={{
+                  padding:10,
+                  backgroundColor: "#000000",
+                  borderRadius:30,
+                  width: "100%",
+                  height: 120,
+                  marginTop:-600
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.location_header}>{product.name}</Text>
+                  {/* <Text>{route.params.paramKey1}</Text> */}
+                  <TouchableOpacity
+                    onPress={() => addToCart(product.id)}
+                    style={{ marginLeft: 10, marginTop: 10 }}
+                  >
+                    <View style={styles.middleicon}>
+                      <Text
+                        style={{
+                          fontWeight: "500",
+                          color: "black",
+                          textAlign: "center",
+                          fontSize: 22,
+                          marginTop: -5,
+
+                        }}
+                      >
+                        +
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={{ flexDirection: "row" }}>
+                  <Image
+                    style={styles.location_inner}
+                    source={require("../../assets/location_white.png")}
+                  />
+                  <Text> </Text>
+                  <View >
+                    <Text style={styles.location_footer}>
+                      {product["restaurant"].area}
+                    </Text>
+                  </View>
+                </View>
+                <Text style={styles.amount}>Rs. {product.price}</Text>
+              </View>
+            </View>
+          </View>
+        ))}
+      </View>
+    </>
     );
   }
 }
@@ -439,10 +435,10 @@ else {
       width: 20,
     },
     container: {
-      justifyContent: "space-between",
+      // justifyContent: "space-between",
       alignItems: "center",
-      flexDirection: "row",
-      marginHorizontal: 20,
+      // flexDirection: "row",
+      // marginHorizontal: 20,
       marginTop: 20,
     },
     back: {

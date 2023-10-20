@@ -17,7 +17,7 @@ const SignupScreen = ({navigation}) => {
         <View style={{
             backgroundColor:'#000',
             height:120,
-            top:80,
+            top:20,
             borderTopRightRadius:80
         }}></View>
     </View>
